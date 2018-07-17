@@ -19,6 +19,7 @@ export AWS_DEFAULT_REGION=us-east-1
 endif
 
 #
+.DEFAULT_GOAL:=	${NAME}.zip
 .PHONY:		setup-lambda setup-role
 
 clean:
@@ -34,3 +35,7 @@ setup-role:
 
 site-packages: requirements.txt
 	pip3 install -t site-packages/ -r requirements.txt
+
+${NAME}.zip: ${NAME}.py site-packages
+	zip -9 -q -r ${NAME}.zip . -x '*.git*'
+	( cd site-packages && zip -9 -q -r ../${NAME}.zip * ) || true
