@@ -56,5 +56,5 @@ site-packages: requirements.txt
 	pip3 install -t site-packages/ -r requirements.txt
 
 ${NAME}.zip: ${NAME}.py site-packages
-	zip -9 -q -r ${NAME}.zip . -x '*.git*'
-	( cd site-packages && zip -9 -q -r ../${NAME}.zip * ) || true
+	zip -9 -q -r "${NAME}.zip" . -x '*.git*'
+	( cd site-packages && zip -9 -q -r "../${NAME}.zip" * ) || true
