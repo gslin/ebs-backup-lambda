@@ -38,4 +38,4 @@ If you are in us-east-1, us-west-2, or eu-west-1, then you won't need this packa
 
 * https://aws.amazon.com/blogs/aws/new-lifecycle-management-for-amazon-ebs-snapshots/
 
-This will reduce lambda service's cost (although this one is quite cheap).
+This will reduce lambda service's cost (although this one is quite cheap) and management cost (which will be much higher).
