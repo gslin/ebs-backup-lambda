@@ -21,6 +21,10 @@ endif
 #
 .PHONY:		setup-lambda setup-role
 
+clean:
+	rm -f ${NAME}.zip
+	rm -fr site-packages/
+
 setup-lambda: ${NAME}.zip
 	aws lambda create-function --function ${NAME} --runtime python3.6 --role "arn:aws:iam::${ACCOUNT_ID}:role/${ROLE}" --handler ${NAME}.lambda_handler --function-name ${NAME} --zip-file fileb://${NAME}.zip --timeout 60 --memory-size 128 || true
 
