@@ -5,3 +5,7 @@
     make setup-role
     make setup-lambda
     make setup-cron
+
+## Update
+
+    make deploy
