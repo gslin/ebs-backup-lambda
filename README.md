@@ -16,6 +16,7 @@ You need to setup `GNUmakefile.local` first, you can reference `GNUmakefile.loca
 
 We have put AWS-related setuping commands into GNUmakefile, so you can use the following simple commands to initialize:
 
+    make setup-policy
     make setup-role
     make setup-lambda
     make setup-cron
