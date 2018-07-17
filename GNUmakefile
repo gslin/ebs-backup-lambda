@@ -39,7 +39,7 @@ setup-cron:
 	aws events put-targets --rule "${NAME}" --targets '{"Id":"1","Arn":"arn:aws:lambda:${REGION}:${ACCOUNT_ID}:function:${NAME}"}' || true
 
 setup-lambda: ${NAME}.zip
-	aws lambda create-function --function ${NAME} --runtime python3.6 --role "arn:aws:iam::${ACCOUNT_ID}:role/${ROLE}" --handler ${NAME}.lambda_handler --function-name ${NAME} --zip-file fileb://${NAME}.zip --timeout 60 --memory-size 128 || true
+	aws lambda create-function --function "${NAME}" --runtime python3.6 --role "arn:aws:iam::${ACCOUNT_ID}:role/${ROLE}" --handler "${NAME}.lambda_handler" --function-name "${NAME}" --zip-file "fileb://${NAME}.zip" --timeout 60 --memory-size 128 || true
 
 setup-policy:
 	aws iam create-policy --policy-name Policy-EC2-CreateSnapshot --policy-document '{"Version":"2012-10-17","Statement":[{"Sid":"Sid${NOW}","Effect":"Allow","Action":"ec2:CreateSnapshot","Resource":"*"}]}' || true
