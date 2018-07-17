@@ -3,6 +3,7 @@
 
 #
 NAME?=		ebs-backup
+NOW?=		$(shell date +%s)
 ROLE?=		Role-Lambda-EBS-Backup
 
 #
@@ -39,6 +40,9 @@ setup-cron:
 
 setup-lambda: ${NAME}.zip
 	aws lambda create-function --function ${NAME} --runtime python3.6 --role "arn:aws:iam::${ACCOUNT_ID}:role/${ROLE}" --handler ${NAME}.lambda_handler --function-name ${NAME} --zip-file fileb://${NAME}.zip --timeout 60 --memory-size 128 || true
+
+setup-policy:
+	aws iam create-policy --policy-name Policy-EC2-CreateSnapshot --policy-document '{"Version":"2012-10-17","Statement":[{"Sid":"Sid${NOW}","Effect":"Allow","Action":"ec2:CreateSnapshot","Resource":"*"}]}'
 
 setup-role:
 	aws iam create-role --role-name "${ROLE}" --assume-role-policy-document '{"Version":"2012-10-17","Statement":{"Effect":"Allow","Principal":{"Service":"lambda.amazonaws.com"},"Action":"sts:AssumeRole"}}' || true
