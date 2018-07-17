@@ -26,6 +26,12 @@ clean:
 	rm -f ${NAME}.zip
 	rm -fr site-packages/
 
+deploy: ${NAME}.zip
+	aws lambda update-function-code \
+		--function-name "${NAME}" \
+		--zip-file "fileb://${NAME}.zip" \
+		--publish
+
 setup-cron:
 	aws events put-rule --schedule-expression 'rate(1 day)' --name "${NAME}" || true
 	aws lambda add-permission --function-name "${NAME}" --statement-id "${NAME}" --action lambda:InvokeFunction --principal events.amazonaws.com --source-arn "arn:aws:events:${REGION}:${ACCOUNT_ID}:rule/${NAME}" || true
