@@ -2,6 +2,12 @@
 
 ## Installation
 
+You need to setup `GNUmakefile.local` first, you can reference `GNUmakefile.local.sample`:
+
+    ACCOUNT_ID=x
+    PROFILE=x
+    REGION=x
+
 We have put AWS-related setuping commands into GNUmakefile, so you can use the following simple commands to initialize:
 
     make setup-role
