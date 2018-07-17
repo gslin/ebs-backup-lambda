@@ -13,3 +13,9 @@ We have put AWS-related setuping commands into GNUmakefile, so you can use the f
 We have put AWS-related updating commands into GNUmakefile, so you can use the following simple commands to update:
 
     make deploy
+
+## Clean
+
+Usually you don't need to cleanup, but if you want/need to do it, use the following commands:
+
+    make clean
