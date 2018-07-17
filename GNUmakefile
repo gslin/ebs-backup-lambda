@@ -26,6 +26,11 @@ clean:
 	rm -f ${NAME}.zip
 	rm -fr site-packages/
 
+setup-cron:
+	aws events put-rule --schedule-expression 'rate(1 day)' --name "${NAME}" || true
+	aws lambda add-permission --function-name "${NAME}" --statement-id "${NAME}" --action lambda:InvokeFunction --principal events.amazonaws.com --source-arn "arn:aws:events:${REGION}:${ACCOUNT_ID}:rule/${NAME}" || true
+	aws events put-targets --rule "${NAME}" --targets '{"Id":"1","Arn":"arn:aws:lambda:${REGION}:${ACCOUNT_ID}:function:${NAME}"}' || true
+
 setup-lambda: ${NAME}.zip
 	aws lambda create-function --function ${NAME} --runtime python3.6 --role "arn:aws:iam::${ACCOUNT_ID}:role/${ROLE}" --handler ${NAME}.lambda_handler --function-name ${NAME} --zip-file fileb://${NAME}.zip --timeout 60 --memory-size 128 || true
 
