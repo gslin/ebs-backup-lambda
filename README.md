@@ -1,5 +1,7 @@
 # ebs-backup-lambda
 
+This package will create snapshots to backup EBS automatically.  Only EBS volumes with `DailyBackup` will be backuped.
+
 ## Installation
 
 You need to setup `GNUmakefile.local` first, you can reference `GNUmakefile.local.sample`:
