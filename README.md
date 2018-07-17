@@ -2,10 +2,14 @@
 
 ## Installation
 
+We have put AWS-related setuping commands into GNUmakefile, so you can use the following simple commands to initialize:
+
     make setup-role
     make setup-lambda
     make setup-cron
 
 ## Update
+
+We have put AWS-related updating commands into GNUmakefile, so you can use the following simple commands to update:
 
     make deploy
