@@ -2,6 +2,10 @@
 
 This package will create snapshots to backup EBS automatically.  Only EBS volumes with `DailyBackup` tag will be backuped.
 
+## Requirements
+
+You will need to install aws-cli to setup and update this package.
+
 ## Installation
 
 You need to setup `GNUmakefile.local` first, you can reference `GNUmakefile.local.sample`:
