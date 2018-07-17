@@ -31,3 +31,11 @@ We have put AWS-related updating commands into GNUmakefile, so you can use the f
 Usually you don't need to cleanup, but if you want/need to do it, use the following commands:
 
     make clean
+
+## Others
+
+If you are in us-east-1, us-west-2, or eu-west-1, then you won't need this package.  You can just use "Lifecycle Management for Amazon EBS Snapshots" function:
+
+https://aws.amazon.com/blogs/aws/new-lifecycle-management-for-amazon-ebs-snapshots/
+
+This will reduce lambda service's cost (although this one is quite cheap).
