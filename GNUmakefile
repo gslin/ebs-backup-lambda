@@ -24,7 +24,7 @@ endif
 .PHONY:		clean deploy setup-cron setup-lambda setup-policy setup-role
 
 clean:
-	rm -f ${NAME}.zip
+	rm -f -- "${NAME}.zip"
 	rm -fr site-packages/
 
 deploy: ${NAME}.zip
