@@ -21,7 +21,7 @@ endif
 
 #
 .DEFAULT_GOAL:=	${NAME}.zip
-.PHONY:		setup-lambda setup-role
+.PHONY:		clean deploy setup-cron setup-lambda setup-policy setup-role
 
 clean:
 	rm -f ${NAME}.zip
