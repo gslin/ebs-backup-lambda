@@ -16,7 +16,7 @@ endif
 ifdef REGION
 export AWS_DEFAULT_REGION=${REGION}
 else
-export AWS_DEFAULT_REGION=us-east-1
+export AWS_DEFAULT_REGION=ap-northeast-1
 endif
 
 #
