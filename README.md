@@ -4,7 +4,7 @@ This package will create snapshots to backup EBS automatically.  Only EBS volume
 
 ## Requirements
 
-You will need to install AWS CLI and GNU Make to setup and update this package.
+You will need to install AWS CLI, GNU Make and Zip to setup and update this package.
 
 ## Installation
 
