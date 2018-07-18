@@ -43,4 +43,4 @@ This will reduce lambda service's cost (although this one is quite cheap) and ma
 
 ## License
 
-See (LICENSE)[LICENSE].
+See [LICENSE](LICENSE).
