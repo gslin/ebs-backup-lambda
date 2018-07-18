@@ -1,6 +1,6 @@
 # ebs-backup-lambda
 
-This package will create snapshots to backup EBS automatically.  Only EBS volumes with `DailyBackup` tag name, and value is `1` will be backuped.
+This package will create snapshots to backup EBS automatically.  Only EBS volumes with `DailyBackup` tag name, and value is `1`, will be backuped.
 
 ## Requirements
 
