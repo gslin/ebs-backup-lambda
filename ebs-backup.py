@@ -25,4 +25,8 @@ def lambda_handler(event, context):
         snapshot.create_tags(Tags=[{
             'Key': 'Name',
             'Value': snap_name
+        },
+        {
+            'Key': 'DailyBackup',
+            'Value': '1'
         }])
